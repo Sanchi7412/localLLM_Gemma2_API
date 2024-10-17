@@ -19,6 +19,7 @@
     "@genkit-ai/flow": "^0.5.16",
     "@genkit-ai/googleai": "^0.5.16",
     "express": "^4.21.1",
+    "genkitx-ollama": "^0.5.16",
     "zod": "^3.23.8"
   },
   "devDependencies": {
