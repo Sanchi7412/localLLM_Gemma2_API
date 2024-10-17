@@ -12,11 +12,12 @@ configureGenkit({
       // Ollama provides an interface to many open generative models. Here,
       // we specify Google's Gemma model. The models you specify must already be
       // downloaded and available to the Ollama server.
-      models: [{ name: 'gemma' }],
+      models: [{ name: 'gemma2:27b' }],
       // The address of your Ollama API server. This is often a different host
       // from your app backend (which runs Genkit), in order to run Ollama on
       // a GPU-accelerated machine.
-      serverAddress: 'http://127.0.0.1:11434',
+      // serverAddress: 'http://127.0.0.1:11434',
+      serverAddress: 'http://100.118.110.78:11434',
     }),
   ],
   // Log debug output to tbe console.
@@ -36,7 +37,7 @@ export const menuSuggestionFlow = defineFlow(
 		// Construct a request and send it to the model API.
     const llmResponse = await generate({
       prompt: `Suggest an item for the menu of a ${subject} themed restaurant`,
-      model: 'ollama/gemma',
+      model: 'ollama/gemma2:27b',
       config: {
         temperature: 1,
       },
