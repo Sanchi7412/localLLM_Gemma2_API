@@ -19,15 +19,15 @@ configureGenkit({
 });
 
 // Define a simple flow that prompts an LLM to generate menu suggestions.
-export const menuSuggestionFlow = defineFlow(
+export const testPrompt = defineFlow(
   {
-    name: 'menuSuggestionFlow',
+    name: 'テスト',
     inputSchema: z.string(),
     outputSchema: z.string(),
   },
   async (subject) => {
     const llmResponse = await generate({
-      prompt: `Suggest an item for the menu of a ${subject} themed restaurant`,
+      prompt: `${subject}`,
       model: 'ollama/gemma2:27b',
       config: {
         temperature: 1,
@@ -36,6 +36,25 @@ export const menuSuggestionFlow = defineFlow(
 
     return llmResponse.text();
   }
+);
+
+export const boy_prompt = defineFlow(
+    {
+      name: '陽気な子供',
+      inputSchema: z.string(),
+      outputSchema: z.string(),
+    },
+    async (subject) => {
+      const llmResponse = await generate({
+        prompt: `${subject}`,
+        model: 'ollama/gemma2:27b',
+        config: {
+          temperature: 1,
+        },
+      });
+
+      return llmResponse.text();
+    }
 );
 
 startFlowsServer();
