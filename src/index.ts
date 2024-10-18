@@ -4,10 +4,7 @@ import * as z from 'zod';
 import { generate } from '@genkit-ai/ai';
 import { configureGenkit } from '@genkit-ai/core';
 import { defineFlow, startFlowsServer } from '@genkit-ai/flow';
-import { googleAI } from '@genkit-ai/googleai';
-
-// Import models from the Google AI plugin. The Google AI API provides access to
-// several generative models. Here, we import Gemini 1.5 Flash.
+import { ollama } from 'genkitx-ollama';
 
 configureGenkit({
 	plugins: [
