@@ -1,2 +1,2 @@
-# localLLM_Gemma2_API
-Gemma 2 27Bをローカルで実行し、呼び出すためのREST API
+# localLLM_Gemma2
+Gemma 2 27Bをローカルで実行するためのプログラム
